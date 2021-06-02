@@ -1,0 +1,24 @@
+.item_container{
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 24px 56px;
+    border-radius: 6px;
+}
+
+.item {
+    padding: 24px 32px;
+}
+
+.item_name {
+    font-size: 24px;
+    font-weight: 500;
+    color: #0064EB;
+}
+
+.item_description {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 16px;
+}

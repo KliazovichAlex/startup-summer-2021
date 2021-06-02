@@ -1,0 +1,42 @@
+.user_info {
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user_avatar{
+    height: 280px;
+    width: 280px;
+    border-radius: 50%;
+}
+
+.user_name{
+    text-align: start;
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.user_login{
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #0065EB;
+}
+
+.follows_container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between ;
+}
+
+.user_follows{
+    margin-top: 25px;
+    display: flex;
+}
+
+.user_followers{
+    padding-left: 8px;
+}

@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  background: #E5E5E5;
+  box-sizing: border-box;
+  font-family: Inter;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
+
