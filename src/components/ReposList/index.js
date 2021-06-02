@@ -16,12 +16,15 @@ function ReposList({reposCount,login}) {
         if(currentPageData!=pageData ||!currentPageData){
             console.log('OKEY');
             setCurrentPageData(pageData)
+        } else {
+            console.log("bad");
+            setCurrentPageData(null)
         }
-    })
+    },[currentPage])
 
        
     console.log(currentPageData);
-  if(currentPageData&& currentPageData.length) {
+  if(currentPageData    && currentPageData.length) {
       return( 
         <div className="repos_container">
             <h1 className="repos_title">Repositories({reposCount})</h1>

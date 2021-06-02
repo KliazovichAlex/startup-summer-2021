@@ -16,12 +16,12 @@ function UserPage({userData}) {
       const allRepos = [].concat(...all);
       console.log(reposCount);
       if(!reposCount|| reposCount!=allRepos) {
-        console.log("1");  
         setReposCount(allRepos.length)
+        console.log(reposCount);  
       }
     })
   })
-  if(userData.login) {
+  if(reposCount) {
     return (
       <div className="user_page">
         <UserInfo  userInfo={userData}/>
