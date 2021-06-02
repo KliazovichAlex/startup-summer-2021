@@ -1,4 +1,4 @@
-import { useState,useEffect } from 'react';
+import { useState } from 'react';
 import './App.css';
 import SearchBar from './components/SearchBar';
 import InitialScreen from './pages/InitialScreen';
@@ -7,14 +7,11 @@ import UserPage from './pages/UserPage';
 function App() {
   const [user, setUser] = useState(null)
 
-  useEffect(()=>{
-    console.log(user);
-  })
 
   const enableUser = (userData) => {
     setUser(userData)
   }
-
+  console.log(user);
   if(user) {
     return (
       <div> 
@@ -22,7 +19,7 @@ function App() {
         <UserPage userData = {user}/>
       </div>
     )
-  } else {
+  }   else {
   return(
     <div>
       <SearchBar setUserData={enableUser}/>

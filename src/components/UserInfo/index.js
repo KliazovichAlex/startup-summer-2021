@@ -1,11 +1,7 @@
-import { useState,useEffect } from 'react';
+import React  from 'react';
 import './style.css'
 
 function UserInfo(props) {
-    useEffect(()=>{
-        console.log(props);
-    })
-
     const followersFormatter =(followersValue)=>{
         if(followersValue >= 1000){
         return (followersValue/1000).toFixed(1)+"k"
@@ -34,16 +30,9 @@ function UserInfo(props) {
                     <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0553 4.73877C12.0553 6.94877 10.2591 8.73877 8.04148 8.73877C5.82383 8.73877 4.02763 6.94877 4.02763 4.73877C4.02763 2.52877 5.82383 0.73877 8.04148 0.73877C10.2591 0.73877 12.0553 2.52877 12.0553 4.73877ZM0.0137939 14.7388C0.0137939 12.0788 5.36224 10.7388 8.04148 10.7388C10.7207 10.7388 16.0692 12.0788 16.0692 14.7388V15.7388C16.0692 16.2888 15.6176 16.7388 15.0657 16.7388H1.01725C0.465351 16.7388 0.0137939 16.2888 0.0137939 15.7388V14.7388Z" fill="#808080"/>
                     </svg>
-                    <h4 className="user_followers">{followersFormatter(props.userInfo.following)} followers</h4>
+                    <h4 className="user_followers">{followersFormatter(props.userInfo.following)} following</h4>
                 </div>
             </div>
-            
-            {/* {props.userData.map((element,index)=>{
-            return(<div key={index}>
-                <h1>{element.name}</h1>
-                <h3>{element.description}</h3>
-                </div>)
-            })} */}
         </div>
     </div>
   )  

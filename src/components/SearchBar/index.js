@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./style.css";
 
 function SearchBar(props) {
   const apiUrl = "https://api.github.com/users";
+  const [inputValue, setInputValue] =useState('')
 
   const onSearchSubmit = async (event) => {
-    const data = await fetch(`${apiUrl}/defunkt`)
+    const data = await fetch(`${apiUrl}/${inputValue}`)
       .then((response) => {
         return response.json();
       })
@@ -15,6 +16,8 @@ function SearchBar(props) {
       console.log(data);
     props.setUserData(data)
   };
+  console.log(inputValue);
+
   return (
       <div className="searchBar">
         <div className="searchBar_logo">
@@ -50,7 +53,7 @@ function SearchBar(props) {
               />
             </svg>
           </button>
-          <input className="search_input" />
+          <input className="search_input" value={inputValue} onChange={(e)=>{setInputValue(e.target.value)}} />
         </div>
       </div>
   );

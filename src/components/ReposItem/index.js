@@ -1,10 +1,8 @@
-import { useEffect } from 'react';
+import React from 'react';
 import './style.css'
 
 function ReposItem(props) {
-    useEffect(()=>{
-        console.log("HIU");
-    })
+    
   return(
     <div className="item_container" >
         <div className="item">
