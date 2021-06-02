@@ -4,3 +4,9 @@
     flex-direction: row;
     flex-shrink: 1 1;
 }
+
+@media screen and (min-width:360px) and (max-width:1040px) {
+    .user_page{
+        flex-direction: column;
+    }
+}

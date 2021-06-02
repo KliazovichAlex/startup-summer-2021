@@ -1,12 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 
 function SearchBar(props) {
   const apiUrl = "https://api.github.com/users";
   const [inputValue, setInputValue] =useState('')
 
+  useEffect(() => {
+    const listener = event => {
+      if (event.code === "Enter" || event.code === "NumpadEnter") {
+        onSearchSubmit()
+      }
+    };
+    document.addEventListener("keydown", listener);
+    return () => {
+      document.removeEventListener("keydown", listener);
+    };
+  }, []);
+  
   const onSearchSubmit = async (event) => {
-    const data = await fetch(`${apiUrl}/${inputValue}`)
+    const data = await fetch(`${apiUrl}/${inputValue?inputValue:"re"}`)
       .then((response) => {
         return response.json();
       })
@@ -53,7 +65,7 @@ function SearchBar(props) {
               />
             </svg>
           </button>
-          <input className="search_input" value={inputValue} onChange={(e)=>{setInputValue(e.target.value)}} />
+          <input className="search_input" value={inputValue} onChange={(e)=>{setInputValue(e.target.value)}}  />
         </div>
       </div>
   );
