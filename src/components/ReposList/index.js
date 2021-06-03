@@ -12,18 +12,14 @@ function ReposList({reposCount,login}) {
     useEffect(async ()=>{
         const pageData = await fetch(`//api.github.com/users/${login}/repos?page=${currentPage}&per_page=4`)
         .then((r)=>{ return r.json() })
-        console.log(pageData);
         if(currentPageData!=pageData ||!currentPageData){
-            console.log('OKEY');
             setCurrentPageData(pageData)
         } else {
-            console.log("bad");
             setCurrentPageData(null)
         }
     },[currentPage])
 
        
-    console.log(currentPageData);
   if(currentPageData    && currentPageData.length) {
       return( 
         <div className="repos_container">

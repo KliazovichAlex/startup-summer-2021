@@ -11,7 +11,6 @@ function App() {
   const enableUser = (userData) => {
     setUser(userData)
   }
-  console.log(user);
   if(user) {
     return (
       <div> 

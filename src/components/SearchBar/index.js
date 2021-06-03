@@ -8,7 +8,6 @@ function SearchBar(props) {
   useEffect(() => {
     const listener = event => {
       if (event.code === "Enter" || event.code === "NumpadEnter") {
-        console.log(inputValue);
         onSearchSubmit()
       }
     };
@@ -19,18 +18,14 @@ function SearchBar(props) {
   }, [inputValue]);
   
   const onSearchSubmit = async (event) => {
-    console.log(inputValue);
     const data = await fetch(`${apiUrl}/${inputValue?inputValue:"re"}`)
       .then((response) => {
         return response.json();
       })
       .catch((error) => {
-        console.log(error.message);
       });
-      console.log(data);
     props.setUserData(data)
   };
-  console.log(inputValue);
 
   return (
       <div className="searchBar">
