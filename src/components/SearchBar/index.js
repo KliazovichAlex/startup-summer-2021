@@ -8,6 +8,7 @@ function SearchBar(props) {
   useEffect(() => {
     const listener = event => {
       if (event.code === "Enter" || event.code === "NumpadEnter") {
+        console.log(inputValue);
         onSearchSubmit()
       }
     };
@@ -15,9 +16,10 @@ function SearchBar(props) {
     return () => {
       document.removeEventListener("keydown", listener);
     };
-  }, []);
+  }, [inputValue]);
   
   const onSearchSubmit = async (event) => {
+    console.log(inputValue);
     const data = await fetch(`${apiUrl}/${inputValue?inputValue:"re"}`)
       .then((response) => {
         return response.json();

@@ -12,12 +12,9 @@ function UserPage({userData}) {
     Promise.all(Array.from(Array(Math.ceil(5)).keys()).map(p =>
       fetch(`${apiUrl}/${userData.login}/repos?page=${p+1}&per_page=100`).then(r => r.json())
     )).then(all => {
-      console.log(all);
       const allRepos = [].concat(...all);
-      console.log(reposCount);
       if(!reposCount|| reposCount!=allRepos) {
         setReposCount(allRepos.length)
-        console.log(reposCount);  
       }
     })
   })
